@@ -1,3 +1,7 @@
 import openai
+import json #to get the api key from the json file
 
-openai.api_key="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"
+with open('config.json') as config_file:
+    config = json.load(config_file)
+    api_key = config['api_key']
+
