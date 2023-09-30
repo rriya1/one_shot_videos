@@ -15,13 +15,13 @@ async def main(message: str):
     response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[ #can be an array of dictionaries
-        {"role": "assistant", "content":"understand subject from the user input, you take up the role of the subject's expert"},
+        {"role": "assistant", "content":"respond to messages like a comedian"}, #can define the personality or command on how chatgpt needs to respond to user messages. 
         { "role": "user","content": message }
     ],
     temperature=1.3,
-    max_tokens=256,
+    max_tokens=50,
     top_p=1,
     frequency_penalty=0,
     presence_penalty=0
     )
-    await cl.Message(content=response).send()
+    await cl.Message(content=str(response['choices'][0]['message']['content'])).send()
