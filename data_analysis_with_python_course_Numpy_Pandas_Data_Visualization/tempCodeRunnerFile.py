@@ -1,0 +1,1 @@
+t(covid_df.sample(10))

@@ -1,0 +1,3 @@
+import openai
+
+openai.api_key="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"
